@@ -1,0 +1,343 @@
+:root {
+  --green: #1e7d32;
+  --green-bg: #e6f4e8;
+  --yellow: #9a7b00;
+  --yellow-bg: #fdf3d0;
+  --red: #b3261e;
+  --red-bg: #fbe4e2;
+  --gray: #5f6368;
+  --gray-bg: #eef0f2;
+  --ink: #1b1d1f;
+  --card: #ffffff;
+  --line: #d7dade;
+  --ua-purple: #46166b;
+  --ua-gold: #eeb211;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  color: var(--ink);
+  background: #f6f7f9;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: var(--ua-purple);
+  color: #fff;
+  padding: 14px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+}
+
+.app-header .brand {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.app-header .tagline {
+  color: var(--ua-gold);
+  font-size: 0.85rem;
+}
+
+.app-header nav {
+  margin-left: auto;
+  display: flex;
+  gap: 14px;
+}
+
+.app-header nav a {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.app-main {
+  flex: 1;
+  padding: 16px;
+}
+
+h1 {
+  font-size: 1.35rem;
+  margin: 4px 0 12px;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+button,
+.btn {
+  display: inline-block;
+  min-height: 48px;
+  min-width: 48px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--ua-purple);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--gray-bg);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.btn-danger {
+  background: var(--red);
+  color: #fff;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.btn-row > * {
+  flex: 1;
+}
+
+input[type='text'] {
+  width: 100%;
+  min-height: 48px;
+  font-size: 1.15rem;
+  padding: 10px 14px;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input[type='text']:focus {
+  outline: 3px solid var(--ua-gold);
+  border-color: var(--ua-purple);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.hint {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.error-box {
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 10px;
+  padding: 12px;
+  margin: 12px 0;
+  font-weight: 600;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.status-available {
+  background: var(--green-bg);
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.status-limited {
+  background: var(--yellow-bg);
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+
+.status-full {
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
+.status-unknown {
+  background: var(--gray-bg);
+  color: var(--gray);
+  border: 1px solid var(--gray);
+}
+
+.status-reserved {
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
+.status-active {
+  background: var(--green-bg);
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.lot-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.lot-card .lot-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.lot-card .lot-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.lot-card .counts {
+  margin-top: 6px;
+  font-size: 1rem;
+}
+
+.map-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.spot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.spot-cell {
+  border-radius: 10px;
+  padding: 12px 8px;
+  text-align: center;
+  border: 2px solid var(--line);
+  background: #fff;
+}
+
+.spot-cell .spot-label {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.spot-cell .spot-status {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.spot-cell.is-available {
+  border-color: var(--green);
+  background: var(--green-bg);
+}
+
+.spot-cell.is-available .spot-status {
+  color: var(--green);
+}
+
+.spot-cell.is-reserved {
+  border-color: var(--red);
+  background: var(--red-bg);
+}
+
+.spot-cell.is-reserved .spot-status {
+  color: var(--red);
+}
+
+select {
+  width: 100%;
+  min-height: 48px;
+  font-size: 1.05rem;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 2px solid var(--line);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row .k {
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--gray);
+  padding: 24px 8px;
+}
+
+.loading {
+  text-align: center;
+  color: var(--gray);
+  padding: 24px;
+}
+
+.success-box {
+  background: var(--green-bg);
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 380px) {
+  .app-header nav {
+    width: 100%;
+    margin-left: 0;
+  }
+}
