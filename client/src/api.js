@@ -13,9 +13,12 @@ async function request(path, options = {}) {
   let res;
   try {
     res = await fetch(path, {
-      headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
-      credentials: 'same-origin',
       ...options,
+      headers: {
+        'Content-Type': 'application/json',
+        ...(options.headers || {}),
+      },
+      credentials: 'same-origin',
     });
   } catch (err) {
     throw new ApiError(0, 'NETWORK', 'Could not reach the server. Check your connection and retry.');
