@@ -3,3 +3,8 @@ client/node_modules/
 client/dist/
 .env
 *.log
+
+# course documents (kept local only)
+ParkSmart-*.md
+Milestone_*.docx
+*.pdf
